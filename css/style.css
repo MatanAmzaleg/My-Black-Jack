@@ -44,7 +44,7 @@ flex-direction: column;
 }
 
 .main-container .card{
-    height: 200px;
+    height: 20vh;
     margin: 10px;
 }
 

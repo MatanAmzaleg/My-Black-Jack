@@ -23,10 +23,10 @@ function renderCards() {
 
     var dealerStrHTML = `
 <img class="card" src="img/cards/${dealerCards[0]}.png" alt="">
-<img class="card" src="img/cards/${dealerCards[1]}.png" alt="">
+<img class="card backed" src="img/cards/BACK.png" alt="">
 `
     document.querySelector('.dealer-cards-container').innerHTML = dealerStrHTML
-    document.querySelector('.dealer-count-span').innerText = getAllPlayersCards()[0].count
+    document.querySelector('.dealer-count-span').innerText = getAmountFromStr(getAllPlayersCards()[0].cards[0])
 
 }
 
@@ -50,6 +50,10 @@ function onAnotherGame() {
 }
 
 function onStayBtn() {
+    var dealerFlippedCard = getAllPlayersCards()[0].cards[1]
+    console.log(dealerFlippedCard);
+    console.log(document.querySelector('.backed').src );
+    document.querySelector('.backed').src = `img/cards/${dealerFlippedCard}.png`
     gDealerHitInterval = setInterval(onDealerTurn, 1000)
 
 }
