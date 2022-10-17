@@ -103,7 +103,7 @@ function dealerTurn() {
 }
 
 function checkVictoriousPlayer(){
-    if(gDealerCards.count > 21 || gPlayerCards.count > gDealerCards.count){
+    if(gDealerCards.count > 21 || (gPlayerCards.count > gDealerCards.count && gPlayerCards.count < 22)){
         document.querySelector('.modal-title').innerText = 'You Won!🏆'
         document.querySelector('.modal-description').innerHTML = 'Youre score is ' + gPlayerCards.count + ' dealer score is ' + gDealerCards.count
         $("#game-over-modal").modal('show');
