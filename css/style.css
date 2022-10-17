@@ -36,6 +36,7 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .player-cards-container, .dealer-cards-container{
