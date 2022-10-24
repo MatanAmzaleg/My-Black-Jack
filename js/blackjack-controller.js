@@ -135,8 +135,12 @@ function renderBlackJack() {
     $("#game-over-modal").modal('show');
 }
 
-function renderScores() {
+function renderDealerScore(){
     document.querySelector('.player-count-span').innerText = getAllPlayersCards()[1].count
+}
+
+function renderScores() {
+    // document.querySelector('.player-count-span').innerText = getAllPlayersCards()[1].count
     document.querySelector('.dealer-count-span').innerText = getAllPlayersCards()[0].count
 
     if (checkIfSplitMode()) {
@@ -162,4 +166,15 @@ function renderSplit() {
     `
 
     document.querySelector('.player-container').innerHTML += strHTML
+}
+
+function onChipClick(chipNum){
+    var currCoins = reduceChips(chipNum)
+    if(chipNum === 25){
+        document.querySelector('.pot').innerHTML = `<img class="chip-25" src="img/${chipNum}-chip.png" alt="">`
+    } else{
+        document.querySelector('.pot').innerHTML = `<img class="chip-50" src="img/${chipNum}-chip.png" alt="">`
+    }
+
+    document.querySelector('.chips-count-h2').innerText = currCoins
 }

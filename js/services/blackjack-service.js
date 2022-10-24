@@ -1,6 +1,8 @@
 'use strict'
 
 
+const COINS_STORAGE_KEY = 'coinsDB'
+
 var gIsSplitMode = false
 var gDealerAcesCounted = 0
 var gPlayerAcesCounted = 0
@@ -22,6 +24,8 @@ var gPlayerSplitCards = {
     count: 0,
     acesCount: 0
 }
+
+var gCoins = 500
 
 function resetAcesCount() {
     gIsSplitMode = false
@@ -233,4 +237,9 @@ function checkSplit() {
 
 function checkIfSplitMode() {
     return gIsSplitMode
+}
+
+function reduceChips(chipsNum){
+    gCoins -= chipsNum
+    return gCoins
 }
